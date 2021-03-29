@@ -18,6 +18,7 @@ use App\Http\Controllers\EmployeeController;
 Route::get('/', function () {
     return view('welcome');
 })->name('landingPage');
+
 Route::get('daftar', [DaftarPesertaController::class, 'index'])->name('daftar');
 Route::get('list-daftar', [DaftarPesertaController::class, 'list_daftar'])->name('listDaftar');
 Route::get('list-daftar/tampil/{id}', [DaftarPesertaController::class, 'daftar_hasil'])->name('daftarHasil');

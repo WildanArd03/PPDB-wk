@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DaftarPeserta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
 use PDF;
 
 class DaftarPesertaController extends Controller
@@ -14,6 +15,10 @@ class DaftarPesertaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function boot()
+    {
+        Paginator::useBootstrap();
+    }
     public function index()
     {
         $daftars = DaftarPeserta::latest()->paginate(5);
@@ -29,7 +34,7 @@ class DaftarPesertaController extends Controller
 
     public function list_daftar()
     {
-        $list_daftars = DaftarPeserta::latest()->paginate();
+        $list_daftars = DaftarPeserta::latest()->paginate(9);
 
         return view('admins.list-daftar', compact('list_daftars'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
