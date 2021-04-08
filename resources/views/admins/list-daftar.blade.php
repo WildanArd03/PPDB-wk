@@ -167,8 +167,8 @@
                                         <td> {{ $ldaftar->nama }} </td>
                                         <td> {{ $ldaftar->jenis_kelamin }} </td>
                                         <td> {{ $ldaftar->tempat_lahir }} </td>
-                                        <td> {{ Carbon\Carbon::parse( $ldaftar->tanggal_lahir )->isoFormat('DD - MM - YYYY') }} </td>
-                                        <td> {{ $ldaftar->alamat }} </td>
+                                        <td> {{ Carbon\Carbon::parse( $ldaftar->tanggal_lahir )->isoFormat('D MMMM Y') }} </td>
+                                        <td> <span class="d-flex alamat"><p class="al">{{ $ldaftar->alamat }}</p></span></td>
                                         <td> {{ $ldaftar->asal_sekolah }} </td>
                                         <td> {{ $ldaftar->kelas }} </td>
                                         <td> {{ $ldaftar->jurusan }} </td>

@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\DaftarPeserta;
+use Barryvdh\DomPDF\PDF as DomPDFPDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Pagination\Paginator;
 use PDF;
+use Brian2694\Toastr\Facades\Toastr;
 
 class DaftarPesertaController extends Controller
 {
@@ -71,9 +73,8 @@ class DaftarPesertaController extends Controller
         ]);
 
         DaftarPeserta::create($request->all());
-
-        return redirect()->route('landingPage')
-            ->with('success', 'Data Berhasil Di Buat');
+        session()->flash("success", "Kamu berhasil mendaftar");
+        return redirect()->route('landingPage');
     }
 
     /**
@@ -127,8 +128,8 @@ class DaftarPesertaController extends Controller
         $siswa = DaftarPeserta::findOrFail($id);
         $siswa->update($request->all());
 
-        return redirect()->route('listDaftar')
-            ->with('success', 'Berhasil Di Perbaharui');
+        session()->flash("success", "Data berhasil di ubah");
+        return redirect()->route('listDaftar');
     }
 
     /**
@@ -141,9 +142,8 @@ class DaftarPesertaController extends Controller
     {
         $list_daftars = DaftarPeserta::findOrFail($id);
         $list_daftars->delete();
-
-        return redirect()->route('listDaftar')
-            ->with('success', 'Berhasil hapus data :)');
+        session()->flash("erorr", "Data berhasil terhapus");
+        return redirect()->route('listDaftar');
     }
 
     public function generatePDF(Request $request)

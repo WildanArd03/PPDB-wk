@@ -12,7 +12,7 @@
     margin-left: 0;
 }
 .sc-table::-webkit-scrollbar {
-    height: 10px;
+    height: 6px;
   }
 
 .sc-table::-webkit-scrollbar-track {
@@ -20,5 +20,18 @@
 }
 
 .sc-table::-webkit-scrollbar-thumb {
-    background-color: rgb(75, 84, 204);
+    background-color: rgb(55, 62, 165);
+    border-radius: 10px ;
+}
+.list .alamat p{
+    margin: 0;
+    padding: 0;
+    width: 25   0px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.list .alamat .al{
+    font-size: 14px;
 }

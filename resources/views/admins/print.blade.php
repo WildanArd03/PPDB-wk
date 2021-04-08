@@ -116,7 +116,7 @@
     <br>
     <table width="100%" border="0">
         <tr>
-            <td colspan="3" style="background-color: white"><b>A. Biaya Seleksi</b></td>
+            <td colspan="3" style="background-color: white"><b>B. Biaya Seleksi</b></td>
         </tr>
         <tr>
             <td>Pembayaran uang seleksi sebesasr Rp. 175.588 melalui transfer bank:</td>
